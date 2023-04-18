@@ -23,9 +23,10 @@ namespace WindowsFormsApp1
 
         private async void button1_Click(object sender, EventArgs e)
         {
+
             string json = await downloadData();
-           
-            label1.Text = json;
+            Bank cur = JsonConvert.DeserializeObject<Bank>(json);
+            label1.Text = cur.rates[0].mid.ToString();
             
 
         }
