@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace WindowsFormsApp1
 {
     public partial class StudentAPI : Form
     {
+
         public StudentAPI()
         {
             InitializeComponent();
@@ -21,14 +23,11 @@ namespace WindowsFormsApp1
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            //var json = File.ReadAllText(@"students.json");
             string json = await downloadData();
-            textBox1.Text = json;
-            var students = JsonConvert.DeserializeObject< List<Student>>(json);
-            listBox1.Items.Clear();
-            foreach (var student in students)
-                listBox1.Items.Add(student);
+           
             label1.Text = json;
+            
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,10 +41,22 @@ namespace WindowsFormsApp1
         }
         private async Task<string> downloadData()
         {
+            string code = textBox1.Text;
+            string table = textBox2.Text;
             HttpClient client = new HttpClient();
-            string call = "http://radoslaw.idzikowski.staff.iiar.pwr.wroc.pl/instruction/students.json";
+            string call = "http://api.nbp.pl/api/exchangerates/rates/" + table + "/" + code + "/?format=json";
             string json = await client.GetStringAsync(call);
-            return json;
+            return json; 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
