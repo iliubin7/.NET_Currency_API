@@ -81,7 +81,7 @@ namespace WindowsFormsApp1
                 context.SaveChanges();
                 counter++;
                 var rates = context.CurrencyBoard.ToList();
-                foreach (var rate in cur.rates)
+                foreach (var rate in rates)
                     listBox1.Items.Add(rate);
             }
 
