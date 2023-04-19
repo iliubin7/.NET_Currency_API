@@ -67,8 +67,23 @@
     <Compile Include="CurrencyAPI.Designer.cs">
       <DependentUpon>CurrencyAPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304190825186_InitialCreate.cs" />
+    <Compile Include="Migrations\202304190825186_InitialCreate.designer.cs">
+      <DependentUpon>202304190825186_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304191020468_Mig.cs" />
+    <Compile Include="Migrations\202304191020468_Mig.designer.cs">
+      <DependentUpon>202304191020468_Mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202304190825186_InitialCreate.resx">
+      <DependentUpon>202304190825186_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304191020468_Mig.resx">
+      <DependentUpon>202304191020468_Mig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
