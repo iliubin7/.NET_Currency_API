@@ -17,13 +17,12 @@ namespace WindowsFormsApp1
 {
     public partial class CurrencyAPI : Form
     {
-        private Bank bank;
-        internal Bank context;
+        private Bank context;
 
         public CurrencyAPI()
         {
             InitializeComponent();
-            bank = new Bank();
+            context = new Bank();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
