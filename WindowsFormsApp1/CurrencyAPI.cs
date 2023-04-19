@@ -71,33 +71,26 @@ namespace WindowsFormsApp1
             listBox1.Items.Add(cur);
 
 
-            // ponizej pracujemy z baza danych
+            //var counter = 0;
+            //foreach (var item in cur.rates)
+            //{
+            //    context.CurrencyBoard.Add(new Currency() { table = cur.table, currency = cur.currency, code = cur.code, rates = cur.rates });
+            //    context.SaveChanges();
+            //    counter++;
+            //    var rates = context.CurrencyBoard.ToList();
+            //    foreach (var rate in rates)
+            //        listBox1.Items.Add(rate);
+            //}
 
-            var counter = 0;
-            foreach (var item in cur.rates)
-            {
-                context.CurrencyBoard.Add(new Currency() { table = cur.table, currency = cur.currency, code = cur.code, rates = cur.rates });
-                context.SaveChanges();
-                counter++;
-                var rates = context.CurrencyBoard.ToList();
-                foreach (var rate in rates)
-                    listBox1.Items.Add(rate);
-            }
+            //var curen = (from s in context.CurrencyBoard select s).ToList<Currency>();
+            //foreach (var st in curen)
+            //{
+            //    Console.WriteLine("ID: {0}, Currency: {1}, Rate: {2}", st.table, st.currency, st.code);
+            //    var remove = context.CurrencyBoard.First(x => x.ID == st.ID);
+            //    context.CurrencyBoard.Remove(remove);
+            //    context.SaveChanges();
+            //}
 
-            var curen = (from s in context.CurrencyBoard select s).ToList<Currency>();
-            foreach (var st in curen)
-            {
-                Console.WriteLine("ID: {0}, Currency: {1}, Rate: {2}", st.table, st.currency, st.code);
-                var remove = context.CurrencyBoard.First(x => x.ID == st.ID);
-                context.CurrencyBoard.Remove(remove);
-                context.SaveChanges();
-            }
-
-            //bank.CurrencyBoard.Add(new Currency() { table = cur.table, currency = cur.currency, code = cur.code, rates = cur.rates });
-            //bank.SaveChanges();
-            //var rates = bank.CurrencyBoard.ToList();
-            //foreach (var rate in rates)
-            //    listBox1.Items.Add(rate);             //NIE DZIALA 
 
         }
 

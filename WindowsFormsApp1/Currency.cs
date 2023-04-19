@@ -11,9 +11,7 @@ namespace WindowsFormsApp1
 
     internal class Currency
     {
-        //public static int ID = 0;
         public int ID { set; get; }
-        public int currencyID { get; set; } 
         public string table { get; set; }       // typ tabeli 
         public string currency { get; set; }    // nazwa waluty 
         public string code { get; set; }        // kod walutowy
@@ -21,7 +19,7 @@ namespace WindowsFormsApp1
 
         public override string ToString()
         {
-           ID++;
+            ID++;
            if (table == "C")
                return $"({ID}) {currency} -- {code} -- Kurs sprzedaży: {rates[0].ask} PLN -- Kurs kupna: {rates[0].bid} PLN -- data publikacji: {rates[0].effectiveDate}";
            else
